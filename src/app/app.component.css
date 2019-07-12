@@ -1,0 +1,16 @@
+#last {
+    text-align:center;
+    text-size-adjust: 14px;
+}
+button {
+    align-content: center;
+    color: blue;
+}
+.menuLinks {
+    text-align: center;
+    margin: 0 2px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(167, 171, 172);
+    
+}

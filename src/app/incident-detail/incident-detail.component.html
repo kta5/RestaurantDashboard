@@ -1,0 +1,15 @@
+<p>
+  incident-detail works!
+</p>
+
+<div *ngIf="incident">
+
+  <h2>{{incident.id | uppercase}} Details</h2>
+  <div><span>id: </span>{{incident.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="incident.id" placeholder="ID"/>
+    </label>
+  </div>
+
+</div>

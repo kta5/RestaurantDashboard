@@ -1,0 +1,23 @@
+#typeColor{
+    color: #FA2222;
+}
+
+#lucky {
+    color: teal;
+}
+
+mat-slider {
+    width: 300px;
+    color: orange;
+  }
+
+.sliderTest {
+    margin: 10px;
+}
+table {
+    width: 100%;
+  }
+
+.individualIncident {
+    color: aqua;
+}
