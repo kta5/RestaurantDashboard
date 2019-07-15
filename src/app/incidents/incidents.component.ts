@@ -1,14 +1,15 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import {IncidentList} from '../../../server/incidents-list';
-import {Incident} from '../../../server/incident';
-import {Time} from '../../../server/time';
+import { IncidentList } from '../../../server/incidents-list';
+import { Incident } from '../../../server/incident';
+import { Time } from '../../../server/time';
 import { CustomDate } from 'server/date';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator} from '@angular/material';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material';
 import { DataSource } from '@angular/cdk/table';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { checkServerIdentity } from 'tls';
 // import {RepositoryService} from '@angular' ;
 @Component({
   selector: 'app-incidents',
@@ -30,7 +31,7 @@ import * as moment from 'moment';
 })
 export class IncidentsComponent implements OnInit, AfterViewInit {
 
-public incidents = [
+  public incidents = [
     new Incident(1, new Time(22, 45, 55, new CustomDate(12, 24, 2018)), 'Android', 'Order Error', 'IHOP'), // PM
     new Incident(2, new Time(8, 50, 30, new CustomDate(8, 5, 2016)), 'IOS', 'Crash', 'APPB'), // AM
     new Incident(3, new Time(20, 54, 25, new CustomDate(10, 20, 2015)), 'Web', 'Crash', 'APPB'), // PM
@@ -43,7 +44,7 @@ public incidents = [
   ];
   public displayedColumns = ['id', 'time', 'device', 'type', 'brand'];
 
-  dataSource: MatTableDataSource<Incident>;
+  public dataSource: MatTableDataSource<Incident>;
 
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -62,7 +63,7 @@ public incidents = [
 
   ngOnInit() {
     console.log('init');
-    }
+  }
 
   ngAfterViewInit() {
     // this.dataSource.paginator = this.paginator;
@@ -80,7 +81,7 @@ public incidents = [
     const s = 'lucky';
   }
 
-
+  /*
   public goToProductDetails(url, id) {
     this.router.navigate([url, id]).then( (e) => {
       if (e) {
@@ -89,27 +90,37 @@ public incidents = [
         console.log('Navigation has failed!');
       }
     });
-}
+    */
+   
+  public idNumber: number;
+
+  public goToIncident(id: number) {
+    this.idNumber = id;
+    this.router.navigate(['/incidents/' + id]);
+    console.log('Navigation Successful');
+    console.log(id);
+  }
+
 
 public doFilter(value: string) {
   // m = moment('2013-03-01', 'YYYY-MM-DD');
   console.log('filtering results');
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  this.dataSource.filter = value.trim().toLocaleLowerCase();
 
-    if (value === 'Applebees'.trim().toLocaleLowerCase()) {
-      this.dataSource.filter = 'appb';
-    }
-    if (value === 'Iphone'.trim().toLocaleLowerCase()) {
-      this.dataSource.filter = 'IOS';
-    }
-      // this.dataSource.filter = (value.substring(value.indexOf('|') + 1));
-      // this.doFilter(value.substring(value.indexOf('|')));
-    // if (value.includes('|')) {
-    //   this.doFilter(value.substring(value.indexOf('|')));
-    //   // this.dataSource.filter = moment('12', 'MM') as;
-    // }
-
-
-    console.log(this.dataSource.filter);
+  if (value === 'Applebees'.trim().toLocaleLowerCase()) {
+    this.dataSource.filter = 'appb';
   }
+  if (value === 'Iphone'.trim().toLocaleLowerCase()) {
+    this.dataSource.filter = 'IOS';
+  }
+  // this.dataSource.filter = (value.substring(value.indexOf('|') + 1));
+  // this.doFilter(value.substring(value.indexOf('|')));
+  // if (value.includes('|')) {
+  //   this.doFilter(value.substring(value.indexOf('|')));
+  //   // this.dataSource.filter = moment('12', 'MM') as;
+  // }
+
+
+  console.log(this.dataSource.filter);
+}
 }

@@ -1,3 +1,5 @@
+
+<!--
 <p>
   incident-detail works!
 </p>
@@ -5,7 +7,7 @@
 <div *ngIf="incident">
 
   <h2>{{incident.id | uppercase}} Details</h2>
-  <div><span>id: </span>{{incident.id}}</div>
+  <div><span>id: </span>{{Incident.id}}</div>
   <div>
     <label>name:
       <input [(ngModel)]="incident.id" placeholder="ID"/>
@@ -13,3 +15,11 @@
   </div>
 
 </div>
+-->
+
+<body *ngFor="let element of incidents">
+  Incident: {{element.id}} <br>
+  Time: {{element.loggedTime.createTime}} <br>
+  Device: {{element.device}} <br>
+  Type: {{element.type}} <br> <br>
+</body>

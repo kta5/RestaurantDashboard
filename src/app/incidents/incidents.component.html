@@ -8,8 +8,7 @@
   <a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
   <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 </div>
 
@@ -46,5 +45,9 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="goToIncident(row.id)"></tr>
 </table>
+<!--
+  (click)="goToIncident(incident.id)"
+-->
+

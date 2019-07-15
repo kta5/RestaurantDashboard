@@ -20,7 +20,9 @@ import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import * as moment from 'moment';
 import { RestaurantComponent } from './restaurant/restaurant.component';
-import { IncidentDetailComponent } from './incident-detail/incident-detail.component';
+// import { IncidentDetailComponent } from './incident-detail/incident-detail.component';
+import { IncidentsModule } from './incidents/incidents.module';
+// import {IncidentsRoutingModule} from './incidents/incidents-routing.module';
 
 
 // import { MaterialModule } from './../material/material.module';
@@ -32,11 +34,10 @@ const appRoutes: Routes = [
   { path: 'incidents', component: IncidentsComponent, data: { title: 'Incident List' } },
   { path: 'home', component: HomeComponent, pathMatch: 'full', data: { title: 'Dine Brands Monitoring System'}},
   { path: 'features', component: FeaturesComponent, pathMatch: 'full', data: {title: 'Features List'}},
-  { path: 'restaurant', component: RestaurantComponent, pathMatch: 'full', data: {title: 'Restaurant List'}}
-  // { path: '**', component: PageNotFoundComponent }
+  { path: 'restaurant', component: RestaurantComponent, pathMatch: 'full', data: {title: 'Restaurant List'}},
+  // { path: 'incident-detail', component: IncidentDetailComponent, pathMatch: 'full', data: {title: 'Incident Detail'}}
+   { path: '**', component: PageNotFoundComponent }
 ];
-
-
 
 
 @NgModule({
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     HomeComponent,
     FeaturesComponent,
     RestaurantComponent,
-    IncidentDetailComponent
+    // IncidentsRoutingModule
+    // IncidentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -62,11 +64,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot( // for navigation routes
       appRoutes,
       { enableTracing: true } // debug purposes
-    )
+    ),
+    IncidentsModule
   ],
   exports: [
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    RouterModule
   ],
 
   providers: [],
