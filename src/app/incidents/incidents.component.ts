@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material';
 import { DataSource } from '@angular/cdk/table';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
-import { checkServerIdentity } from 'tls';
+//import { checkServerIdentity } from 'tls';
 // import {RepositoryService} from '@angular' ;
 @Component({
   selector: 'app-incidents',
@@ -72,9 +72,9 @@ export class IncidentsComponent implements OnInit, AfterViewInit {
     const day: string = moment('2018/07/09').format('l');
 
     if (day === '2018/07/09') {
-      console.log('We Got One!');
+      //console.log('We Got One!');
     }
-    console.log(day);
+    //console.log(day);
   }
 
   onIncidentClick() {
@@ -95,10 +95,10 @@ export class IncidentsComponent implements OnInit, AfterViewInit {
   public idNumber: number;
 
   public goToIncident(id: number) {
-    this.idNumber = id;
-    this.router.navigate(['/incidents/' + id]);
+    this.idNumber = this.incidents[ id - 1].id;
+    this.router.navigate(['/incidents/' + this.idNumber]);
     console.log('Navigation Successful');
-    console.log(id);
+    //console.log(id);
   }
 
 

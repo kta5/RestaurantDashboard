@@ -9,14 +9,14 @@ import { IncidentsComponent } from '../incidents/incidents.component';
   templateUrl: './incident-detail.component.html',
   styleUrls: ['./incident-detail.component.css'],
 })
-export class IncidentDetailComponent extends IncidentsComponent {
+export class IncidentDetailComponent implements OnInit {
 
-  //incident$: Observable<IncidentsComponent>;
+  incident$: Observable<IncidentsComponent>;
 
-  //constructor() { }
-  displayIncident();
+  constructor( private route: ActivatedRoute, private router: Router) { }
+  // displayIncident();
 
-
+  /*
   displayIncident() {
     for (let i = 0; i < this.incidents.length; i++) {
       if (this.incidents[i].id === this.idNumber) {
@@ -28,10 +28,10 @@ export class IncidentDetailComponent extends IncidentsComponent {
 
     }
   }
-  
+  */
 
-  //ngOnInit() {
-    //console.log(this.incidents);
-  //}
+  ngOnInit() {
+    // console.log(this.incidents);
+  }
 
 }
