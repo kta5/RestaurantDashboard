@@ -63,7 +63,7 @@ const appRoutes: Routes = [
     MatDatepickerModule, MatNativeDateModule,
     RouterModule.forRoot( // for navigation routes
       appRoutes,
-      { enableTracing: true } // debug purposes
+      { enableTracing: false } // debug purposes
     ),
     IncidentsModule
   ],

@@ -1,12 +1,16 @@
+import {RestaurantFeatures} from "./restaurant-features";
+
 export class Restaurant {
     private _id: number;
     private _address: string;
-    private _features: string;
+    private _manager: string;
+    private _features: RestaurantFeatures;
     private _brand: string;
 
-    constructor(id: number, address: string, features: string, brand: string) {
+    constructor(id: number, address: string, manager: string, features: RestaurantFeatures, brand: string) {
         this._id = id;
         this._address = address;
+        this._manager = manager;
         this._features = features;
         this._brand = brand;
     }
@@ -25,10 +29,17 @@ export class Restaurant {
         this._address = val;
     }
 
-    public get features(): string {
+    public get manager(): string {
+        return this._manager;
+    }
+    public set manager(val: string) {
+        this._manager = val;
+    }
+
+    public get features(): RestaurantFeatures {
         return this._features;
     }
-    public set features(val: string) {
+    public set features(val: RestaurantFeatures) {
         this._features = val;
     }
 

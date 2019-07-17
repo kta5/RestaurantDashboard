@@ -11,7 +11,7 @@ import { IncidentsComponent } from '../incidents/incidents.component';
 })
 export class IncidentDetailComponent implements OnInit {
 
-  incident$: Observable<IncidentsComponent>;
+  incident$: Observable<Incident>;
 
   constructor( private route: ActivatedRoute, private router: Router) { }
   // displayIncident();
@@ -31,7 +31,6 @@ export class IncidentDetailComponent implements OnInit {
   */
 
   ngOnInit() {
-    // console.log(this.incidents);
   }
 
 }
