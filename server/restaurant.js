@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Incident = /** @class */ (function () {
-    function Incident(id, loggedTime, device, type, brand) {
+var Restaurant = /** @class */ (function () {
+    function Restaurant(id, address, manager, features, brand) {
         this._id = id;
-        this._loggedTime = loggedTime;
-        this._device = device;
-        this._type = type;
+        this._address = address;
+        this._manager = manager;
+        this._features = features;
         this._brand = brand;
     }
-    Object.defineProperty(Incident.prototype, "id", {
+    Object.defineProperty(Restaurant.prototype, "id", {
         get: function () {
             return this._id;
         },
@@ -18,37 +18,37 @@ var Incident = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Incident.prototype, "loggedTime", {
+    Object.defineProperty(Restaurant.prototype, "address", {
         get: function () {
-            return this._loggedTime;
+            return this._address;
         },
         set: function (val) {
-            this._loggedTime = val;
+            this._address = val;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Incident.prototype, "device", {
+    Object.defineProperty(Restaurant.prototype, "manager", {
         get: function () {
-            return this._device;
+            return this._manager;
         },
         set: function (val) {
-            this._device = val;
+            this._manager = val;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Incident.prototype, "type", {
+    Object.defineProperty(Restaurant.prototype, "features", {
         get: function () {
-            return this._type;
+            return this._features;
         },
         set: function (val) {
-            this._type = val;
+            this._features = val;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Incident.prototype, "brand", {
+    Object.defineProperty(Restaurant.prototype, "brand", {
         get: function () {
             return this._brand;
         },
@@ -58,6 +58,6 @@ var Incident = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    return Incident;
+    return Restaurant;
 }());
-exports.Incident = Incident;
+exports.Restaurant = Restaurant;

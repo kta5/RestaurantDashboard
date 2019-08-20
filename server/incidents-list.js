@@ -14,13 +14,9 @@ var IncidentList = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(IncidentList.prototype, "len", {
-        get: function () {
-            return this._incidents.length;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    IncidentList.prototype.len = function () {
+        return this._incidents.length;
+    };
     return IncidentList;
 }());
 exports.IncidentList = IncidentList;

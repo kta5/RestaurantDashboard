@@ -10,7 +10,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { MatSliderModule, MatSlider } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule, MatSortModule, MatDatepickerModule } from '@angular/material';
+import { MatFormFieldModule, MatSortModule, MatDatepickerModule, MatMenu } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { RouterModule, Routes } from '@angular/router';
 import { MatTableDataSource, MatNativeDateModule  } from '@angular/material';
@@ -23,12 +23,12 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 // import { IncidentDetailComponent } from './incident-detail/incident-detail.component';
 import { IncidentsModule } from './incidents/incidents.module';
 // import {IncidentsRoutingModule} from './incidents/incidents-routing.module';
-
+// import {MatMenu} from '@angular/material';
 
 // import { MaterialModule } from './../material/material.module';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 // import 'hammerjs';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 const appRoutes: Routes = [
   { path: 'incidents', component: IncidentsComponent, data: { title: 'Incident List' } },
@@ -61,6 +61,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatSortModule,
     MatDatepickerModule, MatNativeDateModule,
+    MatMenuModule,
     RouterModule.forRoot( // for navigation routes
       appRoutes,
       { enableTracing: false } // debug purposes

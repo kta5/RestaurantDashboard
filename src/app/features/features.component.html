@@ -1,3 +1,66 @@
-<p>
-  features works!
-</p>
+<h2>Enable/Disable Features!</h2>
+
+<button mat-button [matMenuTriggerFor]="restaurantMenu">Select Restaurant</button>
+<mat-menu #restaurantMenu="matMenu">
+  
+  <button mat-menu-item></button>
+</mat-menu>
+<a>Restaurant Selected: </a> <br> <br>
+<table>
+  <tr>
+    <td>
+      <h2 class="featureLabel"><span>Kid Games:</span></h2>
+      <select (change)="selectGamesHandler($event)">
+        <option value=true>Enable</option>
+        <option value=false>Disable</option>
+      </select>
+      <p><span>You selected: {{enableOrDisable}}</span></p>
+    </td>
+    <a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <td>
+      <h2 class="featureLabel"><span>Pickup:</span></h2>
+      <select (change)="selectPickupHandler($event)">
+        <option value=true>Enable</option>
+        <option value=false>Disable</option>
+      </select>
+      <p><span>You selected: {{enableOrDisable}}</span></p>
+    </td>
+    <a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <td>
+      <h2 class="featureLabel"><span>Delivery:</span></h2>
+      <select (change)="selectDeliveryHandler($event)">
+        <option value=true>Enable</option>
+        <option value=false>Disable</option>
+      </select>
+      <p><span>You selected: {{enableOrDisable}}</span></p>
+    </td>
+  </tr>
+</table>
+       <!-- {% if enableOrDisable == true}
+    <p><span>You selected: Enabled</span></p>
+    {% else %}
+    <p><span>You selected: Disabled</span></p>
+    {% endif %} -->
+
+<a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<!--
+  <button mat-button [matMenuTriggerFor]="kidMenu">Kid Games</button>
+<mat-menu #kidMenu="matMenu">
+  <button mat-menu-item>Enable</button>
+  <button mat-menu-item>Disable</button>
+</mat-menu>
+<a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<button mat-button [matMenuTriggerFor]="pickupMenu">Enable Pickup</button>
+<mat-menu #pickupMenu="matMenu">
+  <button mat-menu-item>Enable</button>
+  <button mat-menu-item>Disable</button>
+</mat-menu>
+<a>&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+<button mat-button [matMenuTriggerFor]="deliveryMenu">Enable Delivery</button>
+<mat-menu #deliveryMenu="matMenu">
+  <button mat-menu-item>Enable</button>
+  <button mat-menu-item>Disable</button>
+</mat-menu>
+
+
+-->

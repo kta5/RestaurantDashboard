@@ -11,31 +11,31 @@ export class RestaurantFeatures {
         this._deliveryOption = deliveryOption;
     }
 
-    public get kidGames() {
+    public get kidGames(): boolean {
         return this._kidGames;
     }
     public set kidGames(val: boolean) {
-        this.kidGames = val;
+        this._kidGames = val;
     }
 
-    public get posOrder() {
+    public get posOrder(): boolean {
         return this._posOrder;
     }
     public set posOrder(val: boolean) {
-        this.posOrder = val;
+        this._posOrder = val;
     }
 
-    public get pickupOption() {
+    public get pickupOption(): boolean {
         return this._pickupOption;
     }
     public set pickupOption(val: boolean) {
-        this.pickupOption = val;
+        this._pickupOption = val;
     }
 
-    public get deliveryOption() {
+    public get deliveryOption(): boolean {
         return this._deliveryOption;
     }
     public set deliveryOption(val: boolean) {
-        this.deliveryOption = val;
+        this._deliveryOption = val;
     }
 }

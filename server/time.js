@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Time = /** @class */ (function () {
-    function Time(hour, minute, second) {
+    function Time(hour, minute, second, date) {
         this._hour = hour;
         this._minute = minute;
         this._second = second;
+        this._date = date;
     }
     Object.defineProperty(Time.prototype, "hour", {
         get: function () {
@@ -36,38 +37,21 @@ var Time = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Time.prototype, "createTime", {
+    Object.defineProperty(Time.prototype, "date", {
         get: function () {
-            var meridiem = "";
-            if (this._hour > 12) {
-                meridiem = "PM";
-                this._hour = this._hour - 12;
-            }
-            else if (this._hour === 12) {
-                meridiem = "PM";
-            }
-            else if (this._hour < 12) {
-                meridiem = "AM";
-            }
-            var stringHour = this._hour.toString();
-            var stringMinute = this._minute.toString();
-            var stringSecond = this._second.toString();
-            console.log(stringHour, stringMinute, stringSecond);
-            if (+stringHour < 10) {
-                stringHour = "0" + stringHour;
-            }
-            if (+stringMinute < 10) {
-                stringMinute = "0" + stringMinute;
-            }
-            if (+stringSecond < 10) {
-                stringSecond = "0" + stringSecond;
-            }
-            console.log(meridiem);
-            return stringHour + ":" + stringMinute + ":" + stringSecond + " " + meridiem;
+            return this._date;
+        },
+        set: function (val) {
+            this._date = val;
         },
         enumerable: true,
         configurable: true
     });
+    Time.prototype.createTime = function () {
+        var n = +this._hour + ":" + +this._minute + ":" + +this._second + " | " + +this.date.month + "/" + +this.date.day + "/" + +this.date.year;
+        // console.log(typeof n);
+        return n;
+    };
     return Time;
 }());
 exports.Time = Time;
