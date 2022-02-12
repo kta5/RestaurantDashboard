@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
     "@types/googlemaps": "^3.37.0",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "concurrently": "^4.1.0",
     "core-js": "^2.5.4",
     "google-maps-ng2": "^1.0.10",
